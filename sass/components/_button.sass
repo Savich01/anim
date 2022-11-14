@@ -1,0 +1,72 @@
+// ЭТО КОМПОНЕНТ КНОПКИ!
+.btn
+    &, &:link, &:visited
+      @include style-link($color-gray)
+      background-color: $color-white
+      border-radius: 5rem
+      padding: 1.5rem 4rem
+      font-size: 2rem
+      line-height: 2.4rem
+      font-weight: 400
+      transition: all .3s
+      position: relative
+      border: none
+      @include respond(tab-land)
+          font-size: 1.5rem
+      @include respond(tab-port)
+          padding: 2rem 5rem
+          box-shadow: (0px 4px 4px rgba(0, 0, 0, .5))
+      @include respond(phone)
+          padding: 2.5rem 6rem
+      
+
+      
+    &:hover
+      transform: translateY(-4px)
+      box-shadow: $box-shadow
+      &::after
+        opacity: 0
+        transform: scale(1.5, 1.7)
+        
+      
+    &:active
+      transform: translateY(-1px)
+      box-shadow: 0px 4px 4px rgba($color-black, .1)
+
+    &::after
+      content: ''
+      background-color: $color-white
+      width: 100%
+      height: 100%
+      border-radius: 5rem
+      display: inline-block
+      position: absolute
+      top: 0 
+      left: 0
+      z-index: -1  
+      transition: all .3s
+
+    &_animated
+      animation-name: bottomTotop
+      animation-duration: 3s
+      animation-delay: .5s
+      animation-timing-function: ease
+      backface-visibility: hidden
+      animation-fill-mode: backwards
+
+  
+.btn__group-btn
+  &, &:link, &:visited
+      background-color: $color-brown-light
+      color: $color-white
+  &:hover
+  &::after
+      background-color: $color-brown-light
+      
+        
+    
+
+
+    
+
+    

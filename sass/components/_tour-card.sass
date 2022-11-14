@@ -1,0 +1,128 @@
+.card-tour
+  height: 50rem
+  perspective: 150rem
+  -moz-perspective: 150rem
+  position: relative
+  @include respond(tab-port)
+    height: auto
+
+  &__side
+    height: 50rem
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    backface-visibility: hidden
+    animation-timing-function: ease-in-out  
+    transition: all 1.5s
+    box-shadow: (0px 4px 4px rgba(0, 0, 0, .2))
+    border-radius: .5rem
+    overflow: hidden
+    @include respond(tab-port)
+      height: auto
+      position: relative
+    
+    &_front
+      @include respond(tab-port)
+        padding-bottom: 13rem
+    &_back
+      background-color: green
+      transform: rotateY(180deg)
+      background: linear-gradient(120deg,$color-brown-light, $color-brown-dark)
+      @include respond(tab-port)
+          transform: rotateY(0deg)
+          padding: 5rem
+          padding-top: 12rem
+          margin-top: -11rem
+          clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+
+  &:hover &__side_front
+    transform: rotateY(-180deg)
+    @include respond(tab-port)
+        transform: rotateY(0deg)
+  &:hover &__side_back
+    transform: rotateY(0deg)
+
+  &__img
+    height: 24.5rem
+    background-blend-mode: hard-light
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 79%)
+    overflow: hidden
+    @include respond(tab-port)
+      height: 30rem
+    background: $color-brown-light url('../img/card-1.jpg') center / cover no-repeat
+    &_2
+      background: $color-brown-light url('../img/card-2.jpg') center / cover no-repeat
+    &_3
+      background: $color-brown-light url('../img/card-3.jpg') center / cover no-repeat
+  
+  &__title
+    text-transform: uppercase
+    font-weight: 300
+    letter-spacing: .2rem
+    font-size: 2.8rem
+    text-align: right
+    color: #fff
+    position: absolute
+    right: 0
+    top: 17rem
+    @include respond(tab-port)
+      top: 24rem
+      font-size: 3rem
+  &__span
+    display: inline-block
+    background: linear-gradient(90deg, #C3956A 4%, #A24F03 80%)
+    padding: 1.1rem 1.8rem 0rem 1.8rem
+    &_1
+    &_2
+      position: absolute
+      right: 0
+      top: 4rem
+      padding: 1.1rem 1.8rem
+      
+  &__inner
+    text-align: center
+    padding-top: 3rem
+    @include respond(tab-port)
+      padding-top: 6rem
+    ul
+      text-decoration: none
+      list-style: none
+      li
+        display: inline-block
+        letter-spacing: .1rem
+        color: $color-gray
+        font-size: 1.6rem
+        border-bottom: 1px solid $color-gray
+        &:not(:first-child)
+        margin-top: 2rem
+        @include respond(tab-land)
+          font-size: 1.5rem 
+        
+ 
+  &__descr
+    position: absolute
+    top: 10rem
+    left: 50%
+    transform: translateX(-50%)
+    text-align: center
+    color: $color-white
+    @include respond(tab-port)
+        position: relative
+        top: 0rem
+        left: 0%
+        transform: translateX(0%)
+
+  &__text 
+      margin-bottom: 8rem
+      font-weight: 300
+      font-size: 1.6rem
+      line-height: 1.9rem
+      letter-spacing: .2rem
+  &__price
+      font-weight: 500
+      font-size: 6rem
+      line-height: 7.2rem
+      letter-spacing: .2rem
+      margin-bottom: 8.7rem
+      
